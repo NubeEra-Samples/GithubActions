@@ -13,24 +13,24 @@ jobs:
           AWS_SECRET_ACCESS_KEY:	Gw9lqB+5Ps8r0qgspXpcvhBuHdy5uEpgv/7Mz3tE
         run: |
           echo $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY          
-      - name: Configure AWS CLI
+      - name: 01.Create Folder
         run: |
           mkdir ~/.aws
-      - name: Configure AWS CLI
+      - name: 02.Create config file
         run: |
           touch ~/.aws/config
-      - name: Configure AWS CLI
+      - name: 03.Update config file
         run: |
           printf '%s\n    %s\n    %s\n' '[default]' 'region = us-east-1' 'output = table' >> ~/.aws/config
-      - name: Configure AWS CLI
+      - name: 04.Verify config file 
         run: |
           cat ~/.aws/config
-      - name: Running AWS CLI Command
+      - name: 05.Run AWS S3 LS Command
         run: |
           aws s3 ls
-      - name: Copy Local to S3 using Command
-        run: |
-          aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
+      # - name: Copy Local to S3 using Command
+      #   run: |
+      #     aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
   job2:
     name: 02.Pushing GithubFiles to S3
     runs-on: ubuntu-latest
@@ -42,13 +42,13 @@ jobs:
         run: |
           echo $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
           ls /home/runner/work/GithubActions/GithubActions/
-      - name: AWS CLI Command Configure Checking
-        run: |
-          # aws configure
-          cat ~/.aws/config
-      - name: Running AWS CLI Command
-        run: |
-          aws s3 ls
-      - name: Copy Local to S3 using Command
-        run: |
-          aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
+      # - name: AWS CLI Command Configure Checking
+      #   run: |
+      #     # aws configure
+      #     cat ~/.aws/config
+      # - name: Running AWS CLI Command
+      #   run: |
+      #     aws s3 ls
+      # - name: Copy Local to S3 using Command
+      #   run: |
+      #     aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
