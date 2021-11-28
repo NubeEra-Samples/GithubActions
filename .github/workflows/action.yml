@@ -30,7 +30,7 @@ jobs:
           touch ~/.aws/credentials
       - name: 05.Update credentials file
         run: |
-          printf '%s\n %s\n %s\n' '[default]' 'aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}' 'aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}' > ~/.aws/credentials      
+          printf '%s\n %s\n %s\n' '[default]' 'aws_access_key_id = ${{ env.AWS_ACCESS_KEY_ID }}' 'aws_secret_access_key = ${{ env.AWS_SECRET_ACCESS_KEY }}' > ~/.aws/credentials      
       - name: 06.Verify config file 
         run: |
           cat ~/.aws/config
