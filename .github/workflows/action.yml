@@ -17,9 +17,7 @@ jobs:
         run: |
           mkdir ~/.aws
           touch ~/.aws/config
-          echo "[default]
-          region = us-east-1
-          output = table" >> ~/.aws/config
+          printf '%s\n    %s\n    %s\n' '[default]' 'region = us-east-1' 'output = table' >> ~/.aws/config
           cat ~/.aws/config
       - name: Running AWS CLI Command
         run: |
