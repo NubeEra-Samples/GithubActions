@@ -1,20 +1,24 @@
-name: Greeting from Mujahed
+name: Working Github to S3
 
 on: push
 
 jobs:
   my-job:
-    name: My Job
+    name: Pushing GithubFiles to S3
     runs-on: ubuntu-latest
     steps:
-      - name: Print a greeting
+      - name: Checking Environment Variables
         env:
           MY_VAR: Welcome! My name is
           FIRST_NAME: Syed
           MIDDLE_NAME: Mujahed
           LAST_NAME: Hussaini
         run: |
-          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-      - name: running another command
+          # echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+          pwd
+      - name: Running AWS CLI Command
         run: |
-          echo Welcome Bye
+          aws s3 ls
+      - name: Copy Local to S3 using Command
+        run: |
+          aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
