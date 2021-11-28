@@ -7,6 +7,32 @@ jobs:
     name: Pushing GithubFiles to S3
     runs-on: ubuntu-latest
     steps:
+      - name: Configure Environment Variables
+        env:
+          AWS_ACCESS_KEY_ID:	AKIA4RO4QNJEFDQTZI4O
+          AWS_SECRET_ACCESS_KEY:	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
+        run: |
+          echo $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY          
+      - name: Configure AWS CLI
+        run: |
+          mkdir ~/.aws
+          touch ~/.aws/config
+          echo "[default]
+          region = us-east-1
+          output = table" >> ~/.aws/config
+          cat ~/.aws/config
+      - name: Running AWS CLI Command
+        run: |
+          aws s3 ls
+      - name: Copy Local to S3 using Command
+        run: |
+          aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
+
+jobs:
+  my-job:
+    name: Pushing GithubFiles to S3
+    runs-on: ubuntu-latest
+    steps:
       - name: Checking Environment Variables
         env:
           AWS_ACCESS_KEY_ID:	AKIA4RO4QNJEFDQTZI4O
