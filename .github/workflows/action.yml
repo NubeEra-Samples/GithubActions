@@ -13,9 +13,14 @@ jobs:
           FIRST_NAME: Syed
           MIDDLE_NAME: Mujahed
           LAST_NAME: Hussaini
+          AWS_ACCESS_KEY_ID:	AKIA4RO4QNJEFDQTZI4O
+          AWS_SECRET_ACCESS_KEY:	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
         run: |
           # echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-          pwd
+          ls /home/runner/work/GithubActions/GithubActions/test.txt
+      - name: AWS CLI Command Configure Checking
+        run: |
+          aws configure
       - name: Running AWS CLI Command
         run: |
           aws s3 ls
