@@ -7,6 +7,9 @@ jobs:
     name: 01.Configuring Environment and System
     runs-on: ubuntu-latest
     steps:
+      - name: 09.Listing all Recursively
+        run: |
+          ls /home/runner/work/ -lR
       - name: Configure Environment Variables
         env:
           AWS_ACCESS_KEY_ID:	${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -27,7 +30,7 @@ jobs:
           touch ~/.aws/credentials
       - name: 05.Update credentials file
         run: |
-          printf '%s\n %s\n %s\n' '[default]' 'aws_access_key_id = AKIA4RO4QNJEFDQTZI4O' 'aws_secret_access_key = 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' > ~/.aws/credentials      
+          printf '%s\n %s\n %s\n' '[default]' 'aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}' 'aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}' > ~/.aws/credentials      
       - name: 06.Verify config file 
         run: |
           cat ~/.aws/config
