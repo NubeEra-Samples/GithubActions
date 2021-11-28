@@ -3,8 +3,8 @@ name: Working Github to S3
 on: push
 
 jobs:
-  my-job:
-    name: Configuring Environment and System
+  job1:
+    name: 01.Configuring Environment and System
     runs-on: ubuntu-latest
     steps:
       - name: Configure Environment Variables
@@ -31,10 +31,8 @@ jobs:
       - name: Copy Local to S3 using Command
         run: |
           aws s3 cp ./test.txt s3://bkt28novmujahed/input/local_file.txt
-
-jobs:
   job2:
-    name: Pushing GithubFiles to S3
+    name: 02.Pushing GithubFiles to S3
     runs-on: ubuntu-latest
     steps:
       - name: Checking Environment Variables
