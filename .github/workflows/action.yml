@@ -16,8 +16,14 @@ jobs:
       - name: Configure AWS CLI
         run: |
           mkdir ~/.aws
+      - name: Configure AWS CLI
+        run: |
           touch ~/.aws/config
+      - name: Configure AWS CLI
+        run: |
           printf '%s\n    %s\n    %s\n' '[default]' 'region = us-east-1' 'output = table' >> ~/.aws/config
+      - name: Configure AWS CLI
+        run: |
           cat ~/.aws/config
       - name: Running AWS CLI Command
         run: |
