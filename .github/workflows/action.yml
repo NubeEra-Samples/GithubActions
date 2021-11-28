@@ -17,7 +17,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY:	Gw9lqB+5Ps8r0qgspXpcvhBuHdy5uEpgv/7Mz3tE
         run: |
           # echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-          ls /home/runner/work/GithubActions/GithubActions/test.txt
+          ls /home/runner/work/GithubActions/GithubActions/
       - name: AWS CLI Command Configure Checking
         run: |
           aws configure
