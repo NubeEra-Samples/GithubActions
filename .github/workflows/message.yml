@@ -5,3 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Welcome to Github Job Actions"
+      - run: echo "Github Event Name is ${{github.event_name}}"
