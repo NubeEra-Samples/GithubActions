@@ -6,3 +6,6 @@ jobs:
     steps:
       - run: echo "Welcome to Github Runner Operating System is ${{runner.os}}"
       - run: echo "Github Event Name is ${{github.event_name}}"
+      - run: ls ~
+      - run: pwd
+      - run: ls ${{ github.workspace }}
