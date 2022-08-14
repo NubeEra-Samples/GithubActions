@@ -1,9 +1,9 @@
 name: Run commands on different operating systems
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   Run-npm-on-Ubuntu:
