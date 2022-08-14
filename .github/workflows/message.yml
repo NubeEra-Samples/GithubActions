@@ -4,5 +4,5 @@ jobs:
   Job-Message-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Welcome to Github Job Actions"
+      - run: echo "Welcome to Github Runner Operating System is ${{runner.os}}"
       - run: echo "Github Event Name is ${{github.event_name}}"
