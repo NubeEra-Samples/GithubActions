@@ -1,0 +1,7 @@
+name: 'My Job will help to Planning for display Message'
+on: [push]
+jobs:
+  Job-Message-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      -run echo "Welcome to Github Job Actions"
