@@ -11,7 +11,9 @@ jobs:
       - name: Cloning Current Repository
         uses: actions/checkout@v3
       - name: Checking Checkout Location using Environment variable
-        run: ls ${{ GITHUB_WORKSPACE }}
+        run: |
+          pwd
+          ls ~
       - name: Installing Apache Maven
         run: |
           sudo apt update
