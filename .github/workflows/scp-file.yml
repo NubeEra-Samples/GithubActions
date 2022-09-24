@@ -14,5 +14,5 @@ jobs:
         username: ubuntu
         port: 22
         key_path: '/home/runner/work/GithubActions/GithubActions/kpforall.pem'
-        source: "/home/runner/work/GithubActions/GithubActions/action.yml,/home/runner/work/GithubActions/GithubActions/diff-os.yml"
+        source: "action.yml,diff-os.yml"
         target: "/home/ubuntu/"
