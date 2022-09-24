@@ -16,3 +16,9 @@ jobs:
         key_path: '/home/runner/work/GithubActions/GithubActions/kpforall.pem'
         source: "action.yml,diff-os.yml"
         target: "/home/ubuntu/"
+    - name: Archive Release
+      uses: thedoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'release.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
