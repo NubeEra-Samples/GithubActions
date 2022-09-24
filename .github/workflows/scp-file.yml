@@ -13,5 +13,6 @@ jobs:
         host: 54.245.73.195
         username: ubuntu
         port: 22
+        key: './kpforall.pem'
         source: "action.yml,diff-os.yml"
         target: "/home/ubuntu"
