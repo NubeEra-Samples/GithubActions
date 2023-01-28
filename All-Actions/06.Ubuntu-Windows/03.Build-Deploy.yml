@@ -1,0 +1,18 @@
+name: Run commands on different operating systems
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  Run-maven-install-on-Ubuntu:
+    name: Run maven installation on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning Current Repository
+        uses: actions/checkout@v3
+      - name: Checking Checkout Location using Environment variable
+        run: |
+          ls $pwd
+          ls ~
+          ls /home/runner/work/GithubActions/GithubActions
+      

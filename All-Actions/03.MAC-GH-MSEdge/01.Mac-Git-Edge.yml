@@ -1,0 +1,19 @@
+name: Build & Deploy Packages on MacOS
+on: push
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Check out Current Repository
+        uses: actions/checkout@v3
+
+      - name: Install Github CLI
+        run: |
+          brew update
+          brew install gh
+
+      - name: Install Microsoft Edge
+        run: |
+          brew update
+          brew install --cask microsoft-edge

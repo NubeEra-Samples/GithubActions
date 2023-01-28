@@ -1,0 +1,20 @@
+name: Copying Files From Repo to EC2 Instance
+on: push
+
+jobs:
+  build:
+    name: Clone and Transfering File
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Current Repository
+        uses: actions/checkout@v3
+
+      - name: Copy files via scp actions
+        uses: appleboy/scp-action@master
+        with:
+          host: 44.204.31.170
+          username: ubuntu
+          key_path: '/home/runner/work/gitActionDemos/gitActionDemos/mujahed.pem'
+          port: 22
+          source: "README.md,welcome.yml"
+          target: "/home/ubuntu/"
