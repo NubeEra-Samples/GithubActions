@@ -1,0 +1,24 @@
+name: Specific File Push
+
+on:
+  push:
+    paths:
+      - 'path/to/your/file.txt'  # Specify the path to the file you want to monitor
+
+# on:
+#   push:
+#     paths:
+#       - 'path/to/your/file1.txt'
+#       - 'path/to/your/file2.txt'
+#       - 'path/to/your/directory/**'  # This will trigger on any file in the directory
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run a script
+        run: echo "The specific file has been modified!"
