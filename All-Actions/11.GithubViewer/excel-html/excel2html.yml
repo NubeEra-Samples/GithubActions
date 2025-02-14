@@ -1,0 +1,30 @@
+name: Convert Excel to HTML
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'path/to/your/excel/files/*.xlsx'  # Adjust the path as necessary
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Specify the Node.js version
+
+      - name: Install dependencies
+        run: |
+          npm install xlsx
+          npm install --save-dev @types/xlsx
+
+      - name: Convert Excel to HTML
+        run: |
+          node convert.js  # This will run your conversion script

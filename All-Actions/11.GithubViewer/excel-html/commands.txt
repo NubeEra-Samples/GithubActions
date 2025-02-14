@@ -1,0 +1,6 @@
+npm init -y
+npm install xlsx
+
+write create-sample-xlsx.js file code
+
+node create-sample-xlsx.js
